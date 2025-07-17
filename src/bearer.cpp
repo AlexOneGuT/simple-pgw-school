@@ -2,7 +2,10 @@
 
 #include <pdn_connection.h>
 
-bearer::bearer(uint32_t dp_teid, pdn_connection &pdn) : _dp_teid(dp_teid), _pdn(pdn) {}
+bearer::bearer(uint32_t dp_teid, pdn_connection &pdn, 
+               uint32_t uplink_rate, uint32_t downlink_rate) : _dp_teid(dp_teid), _pdn(pdn),
+      _uplink_limiter(uplink_rate), // Инициализация UL-ограничителя
+      _downlink_limiter(downlink_rate) {} // Инициализация DL-ограничителя
 
 uint32_t bearer::get_sgw_dp_teid() const { return _sgw_dp_teid; }
 

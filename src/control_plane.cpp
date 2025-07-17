@@ -88,3 +88,11 @@ void control_plane::add_apn(std::string apn_name, address_v4 apn_gateway) {
     _apns.emplace(std::move(apn_name), std::move(apn_gateway));
 }
 
+bool control_plane::set_bearer_rate(uint32_t dp_teid, uint32_t uplink_rate_bps, uint32_t downlink_rate_bps) {
+    if (auto bearer = find_bearer_by_dp_teid(dp_teid)) {
+        bearer->set_uplink_rate(uplink_rate_bps);
+        bearer->set_downlink_rate(downlink_rate_bps);
+        return true;
+    }
+    return false;
+}
