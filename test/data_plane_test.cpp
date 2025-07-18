@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 
+#include <thread>
+
 class mock_data_plane_forwarding : public data_plane {
 public:
     explicit mock_data_plane_forwarding(control_plane &control_plane) : data_plane(control_plane) {}
