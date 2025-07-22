@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/simple_pgw.dir/main.cpp.o CMakeFiles/simple_pgw_lib.dir/bearer.cpp.o CMakeFiles/simple_pgw_lib.dir/control_plane.cpp.o CMakeFiles/simple_pgw_lib.dir/data_plane.cpp.o CMakeFiles/simple_pgw_lib.dir/pdn_connection.cpp.o -o simple_pgw 

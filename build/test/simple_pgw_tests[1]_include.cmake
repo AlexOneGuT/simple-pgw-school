@@ -1,5 +1,0 @@
-if(EXISTS "/home/morozov-as/PGW_Project/simple-pgw/build/test/simple_pgw_tests[1]_tests.cmake")
-  include("/home/morozov-as/PGW_Project/simple-pgw/build/test/simple_pgw_tests[1]_tests.cmake")
-else()
-  add_test(simple_pgw_tests_NOT_BUILT simple_pgw_tests_NOT_BUILT)
-endif()
