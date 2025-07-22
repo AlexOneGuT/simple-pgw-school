@@ -80,6 +80,8 @@ void control_plane::delete_pdn_connection(uint32_t cp_teid){
     if (pdns_find_result == _pdns.end()) return;
 
     auto pdn = pdns_find_result->second;
+
+    pdn->_bearers.clear();
     _pdns_by_ue_ip_addr.erase(pdn->get_ue_ip_addr());
     _pdns.erase(pdns_find_result);
 }
