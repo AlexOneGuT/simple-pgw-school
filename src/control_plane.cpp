@@ -81,7 +81,12 @@ void control_plane::delete_pdn_connection(uint32_t cp_teid){
 
     auto pdn = pdns_find_result->second;
 
-    pdn->_bearers.clear();
+    for (const auto& [check_dp_teid, bearer] : _bearers){
+        if (auto pdn_bearers = pdn->_bearers; pdn_bearers.find(check_dp_teid)!= pdn_bearers.end()) {
+            _bearers.erase(check_dp_teid);
+        }
+    }
+
     _pdns_by_ue_ip_addr.erase(pdn->get_ue_ip_addr());
     _pdns.erase(pdns_find_result);
 }
